@@ -18,7 +18,7 @@
                 "title": "Admin",
                 "currentStaff": 1,
                 "staffLimit": 2,
-                "available": true
+                "available": false
             }
         }
     },
