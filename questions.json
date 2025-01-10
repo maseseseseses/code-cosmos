@@ -1,0 +1,105 @@
+{
+    "headAdmin": {
+        "title": "Head Admin Application",
+        "questions": [
+            {
+                "label": "Discord Username (include #)",
+                "type": "text",
+                "required": true,
+                "placeholder": "username#0000"
+            },
+            {
+                "label": "Age",
+                "type": "number",
+                "required": true,
+                "min": 16
+            },
+            {
+                "label": "Time Zone",
+                "type": "text",
+                "required": true
+            },
+            {
+                "label": "Previous Administration Experience",
+                "type": "textarea",
+                "required": true,
+                "rows": 4
+            },
+            {
+                "label": "How would you improve our community?",
+                "type": "textarea",
+                "required": true,
+                "rows": 4
+            }
+        ]
+    },
+    "admin": {
+        "title": "Admin Application",
+        "questions": [
+            {
+                "label": "Discord Username (include #)",
+                "type": "text",
+                "required": true,
+                "placeholder": "username#0000"
+            },
+            {
+                "label": "Age",
+                "type": "number",
+                "required": true,
+                "min": 16
+            },
+            {
+                "label": "What makes you qualified for this position?",
+                "type": "textarea",
+                "required": true,
+                "rows": 4
+            }
+        ]
+    },
+    "seniorMod": {
+        "title": "Senior Moderator Application",
+        "questions": [
+            {
+                "label": "Discord Username (include #)",
+                "type": "text",
+                "required": true,
+                "placeholder": "username#0000"
+            },
+            {
+                "label": "Previous Moderation Experience",
+                "type": "textarea",
+                "required": true,
+                "rows": 4
+            },
+            {
+                "label": "How would you handle a difficult situation?",
+                "type": "textarea",
+                "required": true,
+                "rows": 4
+            }
+        ]
+    },
+    "moderator": {
+        "title": "Moderator Application",
+        "questions": [
+            {
+                "label": "Discord Username (include #)",
+                "type": "text",
+                "required": true,
+                "placeholder": "username#0000"
+            },
+            {
+                "label": "Age",
+                "type": "number",
+                "required": true,
+                "min": 13
+            },
+            {
+                "label": "Why do you want to be a moderator?",
+                "type": "textarea",
+                "required": true,
+                "rows": 4
+            }
+        ]
+    }
+}

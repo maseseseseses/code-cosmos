@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Applications - Code Cosmos</title>
+    <link rel="icon" type="image/gif" href="favicon.gif">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="intro-container" id="intro">
+        <div class="intro-content">
+            <h1 class="intro-title">Join Our Team</h1>
+            <p class="intro-text">Select a position to apply for:</p>
+            
+            <div class="role-selection">
+                <button class="role-btn" data-role="owner" disabled>Owner</button>
+                <button class="role-btn" data-role="headAdmin">Head Admin</button>
+                <button class="role-btn" data-role="admin">Admin</button>
+                <button class="role-btn" data-role="seniorMod">Senior Moderator</button>
+                <button class="role-btn" data-role="moderator">Moderator</button>
+                <button class="start-btn" id="startBtn" disabled>Start Application</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-container" id="formSection" style="display: none;">
+        <div class="container">
+            <h1 id="formTitle"></h1>
+            <form id="application-form"></form>
+        </div>
+    </div>
+
+    <a href="index.html" class="back-btn">Back to Home</a>
+
+    <script>
+        let questions;
+        let staffData;
+
+        Promise.all([
+            fetch('questions.json').then(res => res.json()),
+            fetch('staff-data.json').then(res => res.json())
+        ]).then(([questionsData, staffDataResponse]) => {
+            questions = questionsData;
+            staffData = staffDataResponse;
+            initializeApplication();
+        });
+
+        function initializeApplication() {
+            const roleButtons = document.querySelectorAll('.role-btn');
+            const startBtn = document.getElementById('startBtn');
+            let selectedRole = null;
+
+            roleButtons.forEach(button => {
+                const role = button.dataset.role;
+                let roleData;
+
+                if (staffData.administration.roles[role]) {
+                    roleData = staffData.administration.roles[role];
+                } else if (staffData.moderation.roles[role]) {
+                    roleData = staffData.moderation.roles[role];
+                }
+
+                if (roleData && !roleData.available) {
+                    button.disabled = true;
+                    button.classList.add('unavailable');
+                }
+
+                button.addEventListener('click', () => {
+                    roleButtons.forEach(btn => btn.classList.remove('selected'));
+                    button.classList.add('selected');
+                    selectedRole = role;
+                    startBtn.disabled = false;
+                });
+            });
+
+            startBtn.addEventListener('click', () => {
+                if (selectedRole && questions[selectedRole]) {
+                    document.getElementById('intro').style.display = 'none';
+                    document.getElementById('formSection').style.display = 'block';
+                    loadForm(selectedRole);
+                }
+            });
+        }
+
+        function loadForm(role) {
+            const formData = questions[role];
+            const form = document.getElementById('application-form');
+            document.getElementById('formTitle').textContent = formData.title;
+
+            const formHTML = formData.questions.map(question => `
+                <div class="form-group">
+                    <label>${question.label}</label>
+                    ${getInputElement(question)}
+                </div>
+            `).join('');
+
+            form.innerHTML = formHTML + '<button type="submit">Submit Application</button>';
+        }
+
+        function getInputElement(question) {
+            if (question.type === 'textarea') {
+                return `<textarea 
+                    name="${question.label.toLowerCase().replace(/\s+/g, '-')}"
+                    required
+                    rows="${question.rows || 4}"
+                ></textarea>`;
+            }
+            return `<input 
+                type="${question.type}"
+                name="${question.label.toLowerCase().replace(/\s+/g, '-')}"
+                required
+                ${question.placeholder ? `placeholder="${question.placeholder}"` : ''}
+                ${question.min ? `min="${question.min}"` : ''}
+            >`;
+        }
+    </script>
+</body>
+</html>

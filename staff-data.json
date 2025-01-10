@@ -1,0 +1,42 @@
+{
+    "administration": {
+        "title": "Administration",
+        "roles": {
+            "owner": {
+                "title": "Owner",
+                "currentStaff": 4,
+                "staffLimit": 4,
+                "available": false
+            },
+            "headAdmin": {
+                "title": "Head Admin",
+                "currentStaff": 0,
+                "staffLimit": 2,
+                "available": true
+            },
+            "admin": {
+                "title": "Admin",
+                "currentStaff": 1,
+                "staffLimit": 2,
+                "available": true
+            }
+        }
+    },
+    "moderation": {
+        "title": "Moderation Team",
+        "roles": {
+            "seniorMod": {
+                "title": "Senior Moderator",
+                "currentStaff": 1,
+                "staffLimit": 3,
+                "available": true
+            },
+            "moderator": {
+                "title": "Moderator",
+                "currentStaff": 2,
+                "staffLimit": 4,
+                "available": true
+            }
+        }
+    }
+}
