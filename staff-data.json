@@ -12,13 +12,13 @@
                 "title": "Head Admin",
                 "currentStaff": 0,
                 "staffLimit": 2,
-                "available": true
+                "available": false
             },
             "admin": {
                 "title": "Admin",
                 "currentStaff": 1,
                 "staffLimit": 2,
-                "available": true
+                "available": false
             }
         }
     },
@@ -29,7 +29,7 @@
                 "title": "Senior Moderator",
                 "currentStaff": 1,
                 "staffLimit": 3,
-                "available": true
+                "available": false
             },
             "moderator": {
                 "title": "Moderator",
