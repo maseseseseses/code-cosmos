@@ -298,8 +298,7 @@ button:hover {
     .back-btn {
         position: fixed;
         left: 30px;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 30px;
         padding: 12px 24px;
         background: rgba(255, 255, 255, 0.1);
         color: white;
@@ -314,12 +313,12 @@ button:hover {
 
     .back-btn:hover {
         background: rgba(255, 255, 255, 0.2);
-        transform: translateY(-50%) translateX(5px);
+        transform: translateX(5px);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
     .back-btn:active {
-        transform: translateY(-50%) translateX(0);
+        transform: translateX(0);
     }
   /* Mobile optimizations */
   @media (max-width: 768px) {
