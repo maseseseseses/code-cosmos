@@ -12,7 +12,7 @@
                 "title": "Head Admin",
                 "currentStaff": 0,
                 "staffLimit": 1,
-                "available": true
+                "available": false
             },
             "admin": {
                 "title": "Admin",
