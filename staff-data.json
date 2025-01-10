@@ -11,14 +11,14 @@
             "headAdmin": {
                 "title": "Head Admin",
                 "currentStaff": 0,
-                "staffLimit": 2,
-                "available": false
+                "staffLimit": 1,
+                "available": true
             },
             "admin": {
                 "title": "Admin",
-                "currentStaff": 1,
+                "currentStaff": 0,
                 "staffLimit": 2,
-                "available": false
+                "available": true
             }
         }
     },
@@ -27,13 +27,13 @@
         "roles": {
             "seniorMod": {
                 "title": "Senior Moderator",
-                "currentStaff": 1,
+                "currentStaff": 0,
                 "staffLimit": 3,
-                "available": false
+                "available": true
             },
             "moderator": {
                 "title": "Moderator",
-                "currentStaff": 2,
+                "currentStaff": 1,
                 "staffLimit": 4,
                 "available": true
             }
