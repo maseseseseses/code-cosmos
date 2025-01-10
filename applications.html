@@ -79,22 +79,62 @@
                 }
             });
         }
+          function loadForm(role) {
+              const formData = questions[role];
+              const form = document.getElementById('application-form');
+              document.getElementById('formTitle').textContent = formData.title;
 
-        function loadForm(role) {
-            const formData = questions[role];
-            const form = document.getElementById('application-form');
-            document.getElementById('formTitle').textContent = formData.title;
+              const formHTML = formData.questions.map(question => `
+                  <div class="form-group">
+                      <label>${question.label}</label>
+                      ${getInputElement(question)}
+                  </div>
+              `).join('');
 
-            const formHTML = formData.questions.map(question => `
-                <div class="form-group">
-                    <label>${question.label}</label>
-                    ${getInputElement(question)}
-                </div>
-            `).join('');
+              form.innerHTML = formHTML + '<button type="submit">Submit Application</button>';
+              form.addEventListener('submit', submitForm);
+          }
 
-            form.innerHTML = formHTML + '<button type="submit">Submit Application</button>';
-        }
+          async function submitForm(event) {
+              event.preventDefault();
+              const formData = new FormData(event.target);
+              const data = Object.fromEntries(formData);
+            
+              const selectedRole = document.querySelector('.role-btn.selected').dataset.role;
+              const roleTitle = questions[selectedRole].title;
+            
+              const webhookURL = 'https://discord.com/api/webhooks/1327321095367557217/yCv521bi4Zx6y3o-chw3sKssl65qMzN2Wll5t_Bu4MSzaz6a5gP_9XVegFOESrC-4Y2k';
+            
+              const message = {
+                  embeds: [{
+                      title: `New ${roleTitle} Application`,
+                      color: 3447003,
+                      fields: Object.entries(data).map(([key, value]) => ({
+                          name: key,
+                          value: value,
+                          inline: false
+                      })),
+                      timestamp: new Date()
+                  }]
+              };
 
+              try {
+                  const response = await fetch(webhookURL, {
+                      method: 'POST',
+                      headers: {
+                          'Content-Type': 'application/json'
+                      },
+                      body: JSON.stringify(message)
+                  });
+                
+                  if (response.ok) {
+                      alert('Application submitted successfully!');
+                      window.location.href = 'index.html';
+                  }
+              } catch (error) {
+                  console.error('Error:', error);
+              }
+          }
         function getInputElement(question) {
             if (question.type === 'textarea') {
                 return `<textarea 
