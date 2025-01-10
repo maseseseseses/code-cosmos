@@ -297,8 +297,9 @@ button:hover {
     /* Navigation */
     .back-btn {
         position: fixed;
-        bottom: 30px;
         left: 30px;
+        top: 50%;
+        transform: translateY(-50%);
         padding: 12px 24px;
         background: rgba(255, 255, 255, 0.1);
         color: white;
@@ -311,30 +312,14 @@ button:hover {
         z-index: 1000;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
     .back-btn:hover {
         background: rgba(255, 255, 255, 0.2);
-        transform: translateY(-2px);
+        transform: translateY(-50%) translateX(5px);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
-
-
-
-
     .back-btn:active {
-        transform: translateY(0);
+        transform: translateY(-50%) translateX(0);
     }
   /* Mobile optimizations */
   @media (max-width: 768px) {
