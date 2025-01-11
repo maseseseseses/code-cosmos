@@ -26,41 +26,20 @@
 </body>
 </html></html></html>
 
-
-
-<div class="clock-container">
-    <div id="clock" class="clock"></div>
-    <select id="timezone-select" class="timezone-select">
-        <option value="UTC">UTC</option>
-        <option value="America/New_York">New York</option>
-        <option value="America/Los_Angeles">Los Angeles</option>
-        <option value="Europe/London">London</option>
-        <option value="Asia/Tokyo">Tokyo</option>
-        <option value="Australia/Sydney">Sydney</option>
-    </select>
-</div>
+<!-- Add before the closing body tag -->
+<div id="clock" class="clock"></div>
 
 <script>
     function updateClock() {
         const now = new Date();
-
-        const timezone = document.getElementById('timezone-select').value;
-        const options = {
-            timeZone: timezone,
-            hour12: true,
-            hour: 'numeric',
-            minute: 'numeric',
-            second: 'numeric'
-        };
-        const time = now.toLocaleTimeString('en-US', options);
+        const time = now.toLocaleTimeString();
         document.getElementById('clock').textContent = time;
     }
     
-
-    document.getElementById('timezone-select').addEventListener('change', updateClock);
+    // Update clock immediately and then every second
     updateClock();
     setInterval(updateClock, 1000);
 </script>
 
-
-
+<!-- Add before the closing body tag -->
+<div id="clock" class="clock"></div>
