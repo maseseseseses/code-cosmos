@@ -405,6 +405,7 @@ button:hover {
       margin: 0;
       font-size: 14px;
   }
+
   .clock-container {
       position: fixed;
       bottom: 60px;
@@ -438,6 +439,7 @@ button:hover {
       border-radius: 8px;
       font-size: 18px;
       font-family: monospace;
+
       min-width: fit-content;
       text-align: center;
   }

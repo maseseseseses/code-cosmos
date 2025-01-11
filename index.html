@@ -26,6 +26,8 @@
 </body>
 </html></html></html>
 
+
+
 <div class="clock-container">
     <div id="clock" class="clock"></div>
     <select id="timezone-select" class="timezone-select">
@@ -41,6 +43,7 @@
 <script>
     function updateClock() {
         const now = new Date();
+
         const timezone = document.getElementById('timezone-select').value;
         const options = {
             timeZone: timezone,
@@ -53,7 +56,11 @@
         document.getElementById('clock').textContent = time;
     }
     
+
     document.getElementById('timezone-select').addEventListener('change', updateClock);
     updateClock();
     setInterval(updateClock, 1000);
 </script>
+
+
+
