@@ -384,6 +384,16 @@ button:hover {
       text-align: center;
       padding: 20px;
       position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+  }
+
+  .copyright-top {
+      text-align: center;
+      padding: 20px;
+      position: fixed;
       top: 0;
       width: 100%;
       background-color: rgba(0, 0, 0, 0.8);
@@ -391,7 +401,7 @@ button:hover {
       z-index: 1000;
   }
 
-  .copyright p {
+  .copyright p, .copyright-top p {
       margin: 0;
       font-size: 14px;
   }
