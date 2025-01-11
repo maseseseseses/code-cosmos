@@ -25,3 +25,21 @@
     <a href="privacy.html" class="privacy-link">Privacy Policy</a>
 </body>
 </html></html></html>
+
+<!-- Add before the closing body tag -->
+<div id="clock" class="clock"></div>
+
+<script>
+    function updateClock() {
+        const now = new Date();
+        const time = now.toLocaleTimeString();
+        document.getElementById('clock').textContent = time;
+    }
+    
+    // Update clock immediately and then every second
+    updateClock();
+    setInterval(updateClock, 1000);
+</script>
+
+<!-- Add before the closing body tag -->
+<div id="clock" class="clock"></div>
