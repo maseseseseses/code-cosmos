@@ -43,3 +43,29 @@
 
 <!-- Add before the closing body tag -->
 <div id="clock" class="clock"></div>
+
+<!-- Add this after your opening body tag -->
+<div class="side-panel" id="sidePanel">
+    <div class="panel-content">
+        <button class="panel-toggle" id="panelToggle">
+            <span class="arrow">›</span>
+        </button>
+        <h2>Quick Links</h2>
+        <nav class="panel-links">
+            <a href="applications.html">Apply Now</a>
+            <a href="staff-list.html">Staff List</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="https://discord.gg/codecosmos" target="_blank">Join Discord</a>
+        </nav>
+    </div>
+</div>
+
+<!-- Add this before closing body tag -->
+<script>
+    const panel = document.getElementById('sidePanel');
+    const toggle = document.getElementById('panelToggle');
+
+    toggle.addEventListener('click', () => {
+        panel.classList.toggle('open');
+    });
+</script>

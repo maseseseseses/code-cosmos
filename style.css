@@ -420,3 +420,66 @@ button:hover {
       min-width: fit-content;
       text-align: center;
   }
+
+.side-panel {
+    position: fixed;
+    left: -300px;
+    top: 0;
+    height: 100%;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.side-panel.open {
+    left: 0;
+}
+
+.panel-content {
+    padding: 20px;
+    color: white;
+}
+
+.panel-toggle {
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 80px;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+}
+
+.panel-toggle .arrow {
+    display: inline-block;
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.side-panel.open .arrow {
+    transform: rotate(180deg);
+}
+
+.panel-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.panel-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.panel-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
