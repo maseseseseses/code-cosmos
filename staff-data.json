@@ -10,9 +10,9 @@
             },
             "headAdmin": {
                 "title": "Head Admin",
-                "currentStaff": 0,
-                "staffLimit": 1,
-                "available": true
+                "currentStaff": 2,
+                "staffLimit": 2,
+                "available": false
             },
             "admin": {
                 "title": "Admin",
