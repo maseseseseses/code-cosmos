@@ -380,3 +380,18 @@ button:hover {
     opacity: 0.5;
     cursor: not-allowed;
 }
+
+.copyright {
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+
+.copyright p {
+    margin: 0;
+    font-size: 14px;
+}
