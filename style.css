@@ -483,3 +483,23 @@ button:hover {
 .panel-links a:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
+
+/* Add blur overlay */
+.blur-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.blur-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}

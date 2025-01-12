@@ -64,8 +64,17 @@
 <script>
     const panel = document.getElementById('sidePanel');
     const toggle = document.getElementById('panelToggle');
+    const overlay = document.getElementById('blurOverlay');
 
     toggle.addEventListener('click', () => {
         panel.classList.toggle('open');
+        overlay.classList.toggle('active');
+    });
+
+    overlay.addEventListener('click', () => {
+        panel.classList.remove('open');
+        overlay.classList.remove('active');
     });
 </script>
+<!-- Add this right after the body tag -->
+<div class="blur-overlay" id="blurOverlay"></div>
