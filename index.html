@@ -23,59 +23,18 @@
 
     <a href="https://discord.gg/codecosmos" class="discord-link" target="_blank">Join Our Server</a>
     <a href="privacy.html" class="privacy-link">Privacy Policy</a>
+
+    <div id="clock" class="clock"></div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const time = now.toLocaleTimeString();
+            document.getElementById('clock').textContent = time;
+        }
+        
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
 </body>
-</html></html></html>
-
-<!-- Add before the closing body tag -->
-<div id="clock" class="clock"></div>
-
-<script>
-    function updateClock() {
-        const now = new Date();
-        const time = now.toLocaleTimeString();
-        document.getElementById('clock').textContent = time;
-    }
-    
-    // Update clock immediately and then every second
-    updateClock();
-    setInterval(updateClock, 1000);
-</script>
-
-<!-- Add before the closing body tag -->
-<div id="clock" class="clock"></div>
-
-<!-- Add this after your opening body tag -->
-<div class="side-panel" id="sidePanel">
-    <div class="panel-content">
-        <button class="panel-toggle" id="panelToggle">
-            <span class="arrow">›</span>
-        </button>
-        <h2>Quick Links</h2>
-        <nav class="panel-links">
-            <a href="applications.html">Apply Now</a>
-            <a href="staff-list.html">Staff List</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="https://discord.gg/codecosmos" target="_blank">Join Discord</a>
-        </nav>
-    </div>
-</div>
-  <script>
-      const panel = document.getElementById('sidePanel');
-      const toggle = document.getElementById('panelToggle');
-      const overlay = document.getElementById('blurOverlay');
-
-      toggle.addEventListener('click', () => {
-          panel.classList.toggle('open');
-          overlay.classList.toggle('active');
-      });
-
-      overlay.addEventListener('click', () => {
-          panel.classList.remove('open');
-          overlay.classList.remove('active');
-      });
-  </script>
-<!-- Add this right after the body tag -->
-<div class="blur-overlay" id="blurOverlay"></div>
-
-<!-- Add this right after the body tag -->
-<div class="blur-overlay" id="blurOverlay"></div>
+</html>
