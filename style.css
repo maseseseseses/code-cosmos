@@ -28,101 +28,59 @@ body {
     margin-bottom: 20px;
     text-shadow: 0 0 10px rgba(114, 137, 218, 0.3);
 }
-  .intro-text {
-      font-size: clamp(1.2rem, 4vw, 1.5em);
-      color: #99AAB5;
-      margin-bottom: 40px;
-  }
 
-  .start-btn {
-      min-width: 200px;
-      white-space: nowrap;
-      font-size: clamp(1rem, 2.5vw, 1.2em);
-      padding: 15px 30px;
-      background: #7289DA;
-      color: white;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
-      animation: float 3s infinite;
-  }
+.intro-text {
+    font-size: 1.5em;
+    color: #99AAB5;
+    margin-bottom: 40px;
+}
 
-  .start-btn:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 20px rgba(114, 137, 218, 0.4);
-  }
+.start-btn {
+    font-size: 1.2em;
+    padding: 15px 40px;
+    background: #7289DA;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: float 3s infinite;
+}
 
-  /* Form Styles */
-  .form-container {
-      padding: 20px;
-  }
+.start-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(114, 137, 218, 0.4);
+}
 
-  .container {
-      max-width: 800px;
-      margin: 0 auto;
-      background-color: #23272a;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-  }
+/* Form Styles */
+.form-container {
+    padding: 20px;
+}
 
-  h1 {
-      text-align: center;
-      color: #7289da;
-      margin-bottom: 30px;
-  }
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #23272a;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
 
-  .form-group {
-      margin-bottom: 20px;
-  }
+h1 {
+    text-align: center;
+    color: #7289da;
+    margin-bottom: 30px;
+}
 
-  label {
-      display: block;
-      margin-bottom: 8px;
-      color: #99aab5;
-  }
+.form-group {
+    margin-bottom: 20px;
+}
 
-  /* Update the button-group styles */
-  .button-group {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-      width: 100%;
-      padding: 0 20px;
-  }
-
-  /* Update intro content for better mobile scaling */
-  .intro-content {
-      text-align: center;
-      animation: fadeIn 2s ease-in;
-      width: 90%;
-      max-width: 1200px;
-      padding: 20px;
-  }
-
-  .intro-title {
-      font-size: clamp(2.5rem, 8vw, 4em);
-  }
-
-  /* Media queries for different devices */
-  @media (max-width: 768px) {
-      .button-group {
-          gap: 15px;
-      }
-    
-      .start-btn {
-          width: 100%;
-          max-width: 300px;
-      }
-  }
-
-  @media (min-width: 769px) and (max-width: 1024px) {
-      .start-btn {
-          min-width: 250px;
-      }
-  }
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #99aab5;
+}
 
 input, textarea {
     width: 100%;
@@ -263,12 +221,6 @@ button:hover {
     display: flex;
     gap: 20px;
     justify-content: center;
-}
-
-.start-btn {
-    white-space: nowrap;
-    min-width: fit-content;
-    padding: 15px 40px;
 }
   /* Base styles */
   .staff-container {
